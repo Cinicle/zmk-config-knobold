@@ -17,7 +17,7 @@
         };
         bt_layer {
             bindings = <
-                &bt BT_SEL 1 &bt BT_SEL 0 &kp 
+                &bt BT_SEL 1 &bt BT_SEL 0 &kp F14
                 &bt BT_CLR &trans &bootloader
                 
                 >;
