@@ -11,9 +11,22 @@
 // |   TAB   |    A    |
 // |  SHIFT  |    Z    |
             bindings = <
-    &kp ESC    &kp Q
+    &kp ESC    &mo 1
     &kp TAB    &kp A
     &kp LSHIFT &kp Z
+            >;
+
+            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+        bt_layer {
+// ---------------------
+// |   ESC   |    Q    |
+// |   TAB   |    A    |
+// |  SHIFT  |    Z    |
+            bindings = <
+    &bt BT_SEL 0    &bootloader
+    &bt BT SEL 1   &bt BT_CLR
+    &kp LSHIFT      &kp Z
             >;
 
             //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
