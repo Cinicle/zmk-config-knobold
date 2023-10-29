@@ -7,9 +7,9 @@
 
         default_layer {
             bindings = <
+                &kp N1 &kp N2
                 &kp B &kp B
-                &kp B &kp B
-                &kp B &kp B
+                &kp A &kp B
                 
                 >;
 
