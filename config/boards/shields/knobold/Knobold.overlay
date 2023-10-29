@@ -40,9 +40,9 @@
         sensors = <&left_encoder &right_encoder>;
     };
     &left_encoder {
-    status = "okay";
+        status = "okay";
     };
     &right_encoder {
-    status = "okay";
+        status = "okay";
     };
 };
