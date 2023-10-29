@@ -1,6 +1,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define default_layer 0
+#define bt_layer 1
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -11,8 +14,6 @@
     &kp TAB    &kp A
     &kp LSHIFT &kp Z
             >;
-
-            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
         bt_layer {
             bindings = <
@@ -20,8 +21,6 @@
     &bt BT SEL 1   &bt BT_CLR
     &kp LSHIFT      &kp Z
             >;
-
-            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
