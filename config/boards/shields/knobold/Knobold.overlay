@@ -19,6 +19,7 @@
             , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
+};
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
@@ -39,4 +40,3 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
     };
-};
