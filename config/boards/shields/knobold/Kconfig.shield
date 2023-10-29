@@ -1,2 +1,3 @@
 config SHIELD_KNOBOLD
     def_bool $(shields_list_contains,Knobold)
+CONFIG_ZMK_SLEEP=y
