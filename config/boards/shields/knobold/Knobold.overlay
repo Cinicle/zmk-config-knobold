@@ -19,7 +19,7 @@
             , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-    left_encoder: encoder_left {
+left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         a-gpios = <8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -27,7 +27,7 @@
         resolution = <4>;
         status = "disabled";
     };
-    right_encoder: encoder_right {
+right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
         a-gpios = <16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -35,10 +35,10 @@
         resolution = <4>;
         status = "disabled";
     };
-};
 sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
     };
+};
 &left_encoder {status = "okay";};
 &right_encoder {status = "okay";};
