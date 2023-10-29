@@ -7,9 +7,8 @@
 
         default_layer {
             bindings = <
-                &kp N1 &kp N2
-                &kp B &kp B
-                &kp A &kp B
+                &kp RIGHT &kp C_NEXT &kp C_PREV 
+                &kp LEFT  &MO 1  &kp C_MUTE
                 
                 >;
 
