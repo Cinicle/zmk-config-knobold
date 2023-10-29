@@ -4,3 +4,5 @@ config ZMK_KEYBOARD_NAME
     default "Knobold"
 
 endif
+CONFIG_EC11=y
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
