@@ -30,7 +30,7 @@
     right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
-        a-gpios = 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         resolution = <4>;
         status = "disabled";
