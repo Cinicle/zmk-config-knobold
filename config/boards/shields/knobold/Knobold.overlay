@@ -31,11 +31,11 @@ right_encoder: encoder_right {
         label = "RIGHT_ENCODER";
         a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
+        steps = <72>;
     };
 sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <30>;
+        triggers-per-rotation = <36>;
     };
 };
