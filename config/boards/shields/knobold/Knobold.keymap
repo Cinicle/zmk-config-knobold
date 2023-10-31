@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &left_encoder { status = "okay"; resolution = <4>; };
-&right_encoder { status = "okay"; resolution = <2>; };
+&right_encoder { status = "okay"; resolution = <8>; };
 
 / {
     keymap {
