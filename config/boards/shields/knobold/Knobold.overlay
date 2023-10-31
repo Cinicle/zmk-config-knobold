@@ -24,14 +24,14 @@ left_encoder: encoder_left {
         label = "LEFT_ENCODER";
         a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
+        steps = <80>;
     };
 right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
         a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <60>;
+        steps = <120>;
     };
 sensors {
         compatible = "zmk,keymap-sensors";
