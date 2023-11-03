@@ -23,14 +23,12 @@ jobs:
       with:
         python-version: "3.x"
 
-    - name: Install West
-      run: pip install west
-
-    - name: West Initialize
-      run: west init -l zmk --manifest-rev=main
-
-    - name: West Update
-      run: west update
+    - name: Install West and dependencies
+      run: |
+        pip install --upgrade pip
+        pip install west
+        west init --manifest-rev=main
+        west update
 
     - name: Build Firmware
       run: |
