@@ -38,42 +38,28 @@ sensors {
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <36>;
         };
-&amp;sda {
+&amp;i2c1 {
     status = "okay";
-    gpios = &lt;&amp;gpio1 1 GPIO_ACTIVE_HIGH&gt;; // SDA
-    };
-
-&amp;scl {
-    status = "okay";
-    gpios = &lt;&amp;gpio1 0 GPIO_ACTIVE_HIGH&gt;; // SCL
-    };
-
-&amp;spi1 {
-    status = "okay";
-    sck-pin = &lt;40&gt;;   // Modify to match SCL pin
-    mosi-pin = &lt;41&gt;;  // Modify to match SDA pin
-    };
+    sda-gpios = &lt;&amp;gpio1 1 GPIO_ACTIVE_LOW&gt;; // SDA: PD1
+    scl-gpios = &lt;&amp;gpio1 0 GPIO_ACTIVE_LOW&gt;; // SCL: PD0
+};
 
 &amp;gpio1 {
     status = "okay";
-    };
+};
 
-&amp;st7789vt_display_spi {
-    compatible = "ilitek,ili9341";
-    dt-bindings/gpio/gpio.h = /bits/ 8 &lt;32&gt;;
-    reg = &lt;0&gt;;
-    spi = &lt;&amp;spi1&gt;;
+&amp;st7789vy_display_i2c {
+    compatible = "sitronix,st7789h2";
+    reg = &lt;0x3e&gt;;
     label = "Display";
-    spi-max-frequency = ;
+    i2c = &lt;&amp;i2c1&gt;;
 
     reset-gpios = &lt;&amp;gpio1 13 GPIO_ACTIVE_LOW&gt;; // Reset pin
-    dc-gpios = &lt;&amp;gpio1 10 GPIO_ACTIVE_HIGH&gt;; // Data/Command pin
-    cs-gpios = &lt;&amp;gpio0 3 GPIO_ACTIVE_LOW&gt;;  // Chip Select pin (Modified)
+    dc-gpios = &lt;&amp;gpio0 3 GPIO_ACTIVE_HIGH&gt;; // Data/Command pin
+    bl-gpios = &lt;&amp;gpio1 10 GPIO_ACTIVE_HIGH&gt;; // Backlight pin
 
     width = &lt;240&gt;;
-    height = &lt;240&gt;;
-
-    rotation = /bits/ 8 &lt;0&gt;; // Set rotation; 0, 90, 180, or 270
-    };
+    height = &lt;320&gt;;
+};
 };
 
