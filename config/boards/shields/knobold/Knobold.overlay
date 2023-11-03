@@ -39,26 +39,29 @@ sensors {
         triggers-per-rotation = <36>;
         };
 };
-&i2c1 {
+&i2c0 {
     status = "okay";
-    sda-gpios = <&gpio0 17 0>; // SDA: PD1
-    scl-gpios = <&gpio0 16 0>; // SCL: PD0
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    sda-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>; // SDA: PD1
+    scl-gpios = <&gpio0 16 GPIO_ACTIVE_LOW>; // SCL: PD0
 };
 
 &gpio1 {
     status = "okay";
 };
 
-&st7789v_display {
-    compatible = "sitronix,st7789v"; // Correct compatible driver
-    reg = <0x3e>;
+&st7789v_display_i2c {
+    compatible = "sitronix,st7789v";
+    reg = <0x3E>;
     label = "Display";
-    i2c = <&i2c1>;
+    i2c = <&i2c0>;
 
-    reset-gpios = <&gpio1 13 GPIO_ACTIVE_LOW>; // Reset pin
-    dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; // Data/Command pin
-    bl-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>; // Backlight pin
+    reset-gpios = <&gpio1 13 GPIO_ACTIVE_LOW>;  // Reset pin
+    dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;  // Data/Command pin
+    bl-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;  // Backlight pin (if applicable)
 
     width = <240>;
     height = <320>;
-    };
+
+    status = "okay";
+};
