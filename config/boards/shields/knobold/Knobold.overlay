@@ -37,7 +37,6 @@ sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <36>;
-    };
 };
 &amp;sda {
     status = "okay";
@@ -75,4 +74,6 @@ sensors {
     height = &lt;240&gt;;
 
     rotation = /bits/ 8 &lt;0&gt;; // Set rotation; 0, 90, 180, or 270
+    };
 };
+
