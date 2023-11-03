@@ -5,8 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'config/**'
-      - 'Knobold/**'
+      - 'config/boards/shields/Knobold/**' #match your shield's conf path
   workflow_dispatch:
 
 jobs:
