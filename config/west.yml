@@ -8,7 +8,7 @@ manifest:
     - name: zmk
       path: zmk
       remote: zmkfirmware
-      revision: refs/tags/0.6.0
+      revision: main
   self:
     path: config
     west-commands: zmk/west/west-commands.yml
