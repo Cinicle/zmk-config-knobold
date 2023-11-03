@@ -18,45 +18,45 @@
             = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
-    };
+        };
 left_encoder: encoder_left {
         compatible = "alps,ec11";
         label = "LEFT_ENCODER";
         a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
-    };
+        };
 right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
         a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <72>;
-    };
+        };
 sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <36>;
-};
+        };
 &amp;sda {
     status = "okay";
     gpios = &lt;&amp;gpio1 1 GPIO_ACTIVE_HIGH&gt;; // SDA
-};
+    };
 
 &amp;scl {
     status = "okay";
     gpios = &lt;&amp;gpio1 0 GPIO_ACTIVE_HIGH&gt;; // SCL
-};
+    };
 
 &amp;spi1 {
     status = "okay";
     sck-pin = &lt;40&gt;;   // Modify to match SCL pin
     mosi-pin = &lt;41&gt;;  // Modify to match SDA pin
-};
+    };
 
 &amp;gpio1 {
     status = "okay";
-};
+    };
 
 &amp;st7789vt_display_spi {
     compatible = "ilitek,ili9341";
