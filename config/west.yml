@@ -1,15 +1,11 @@
 manifest:
-  defaults:
-    remote: zmkfirmware
   remotes:
-    
-name: zmkfirmware
-    url-base: https://github.com/zmkfirmware
-projects:
-name: zmk
-  path: zmk
-  remote: zmkfirmware
-  revision: refs/tags/0.6.0
-self:
-  path: config
-  west-commands: zmk/west/west-commands.yml
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
