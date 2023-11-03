@@ -11,7 +11,7 @@
 
         default_layer {
             bindings = <
-                &kp RIGHT &kp F15 &kp C_PP
+                &kp RIGHT &kp F17 &kp C_PP
                 &kp LEFT &mo 1 &kp C_MUTE
                 
                 >;
