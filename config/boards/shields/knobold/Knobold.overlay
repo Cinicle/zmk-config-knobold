@@ -48,8 +48,8 @@ sensors {
     status = "okay";
 };
 
-&amp;st7789vy_display_i2c {
-    compatible = "sitronix,st7789h2";
+&amp;st7789v_display {
+    compatible = "sitronix,st7789v"; // Correct compatible driver
     reg = &lt;0x3e&gt;;
     label = "Display";
     i2c = &lt;&amp;i2c1&gt;;
