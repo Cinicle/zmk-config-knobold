@@ -38,6 +38,7 @@ sensors {
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <36>;
         };
+};
 &amp;i2c1 {
     status = "okay";
     sda-gpios = &lt;&amp;gpio1 1 GPIO_ACTIVE_LOW&gt;; // SDA: PD1
@@ -61,5 +62,3 @@ sensors {
     width = &lt;240&gt;;
     height = &lt;320&gt;;
 };
-};
-
