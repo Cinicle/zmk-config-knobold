@@ -1,34 +1,5 @@
-name: Build Firmware
-
-on:
-  push:
-    paths:
-      - 'config/**'
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install West and dependencies
-      run: |
-        pip install --upgrade pip
-        pip install west
-        west init -l zmk
-
-    - name: Build Firmware
-      run: |
-        cd zmk
-        source zephyr/zephyr-env.sh
-        west build -b nice_nano_v2 -- -DSHIELD="Knobold nice_view_adapter nice_view"
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
