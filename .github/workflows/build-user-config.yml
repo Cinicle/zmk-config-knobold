@@ -3,9 +3,9 @@ name: Build Firmware
 on:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'config/boards/shields/Knobold/**' #match your shield's conf path
+      - '**'
   workflow_dispatch:
 
 jobs:
@@ -16,19 +16,21 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
       with:
-        submodules: true
+        submodules: "recursive"
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
-        python-version: '3.x'
+        python-version: "3.x"
 
-    - name: Install West and dependencies
-      run: |
-        pip install --upgrade pip setuptools wheel
-        pip install west
-        west init -l zmk
-        west update
+    - name: Install West
+      run: pip install west
+
+    - name: West Initialize
+      run: west init -l zmk --manifest-rev=main
+
+    - name: West Update
+      run: west update
 
     - name: Build Firmware
       run: |
