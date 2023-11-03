@@ -13,8 +13,3 @@ manifest:
   self:
     path: config
     west-commands: zmk/west/west-commands.yml
-
-  # Specify your custom board and shield here
-  build:
-    board: nice_nano_v2
-    shield: Knobold
