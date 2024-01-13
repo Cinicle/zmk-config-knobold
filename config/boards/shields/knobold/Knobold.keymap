@@ -21,8 +21,8 @@
         };
         eff_layer {
             bindings = <
-                &kp C_PP &kp C_PREV &kp C_NEXT
-                &kp F15 &tog 1 &mo 2
+                &kp F14 &kp F17 &kp F18
+                &kp F16 &tog 1 &mo 2
                 
                 >;
 
