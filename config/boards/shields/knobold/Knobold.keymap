@@ -26,7 +26,7 @@
                 
                 >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp F19 F20 &inc_dec_kp F21 F22>;
         };
         bt_layer {
             bindings = <
