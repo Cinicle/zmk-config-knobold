@@ -21,12 +21,12 @@
         };
         eff_layer {
             bindings = <
-                &kp F14 &kp F17 &kp F18
-                &kp F16 &tog 1 &mo 2
+                &kp LS(F2) &kp LS(F3) &kp LS(F4)
+                &kp LS(F1) &tog 1 &mo 2
                 
                 >;
 
-            sensor-bindings = <&inc_dec_kp F19 F20 &inc_dec_kp F21 F22>;
+            sensor-bindings = <&inc_dec_kp LS(F5) LS(F6) &inc_dec_kp LS(F7) LS(F8)>;
         };
         bt_layer {
             bindings = <
